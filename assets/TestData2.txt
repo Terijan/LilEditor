@@ -1,0 +1,58 @@
+{
+  "Sprite": {
+    "Name": "assets/test.png",
+    "SizeX": "22",
+    "SizeY": "18"
+  },
+  "Animations": [
+    {
+      "Name": "Name1",
+      "Keys": [
+        {
+          "Frame": 12,
+          "Length": 10,
+          "scripts": [
+            "script 1",
+            "script2",
+            "script3"
+          ]
+        },
+        {
+          "Frame": 1,
+          "Length": 10,
+          "scripts": [
+            "script 1",
+            "script2",
+            "script3"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Name2",
+      "Keys": [
+        {
+          "Frame": 3,
+          "Length": 10,
+          "scripts": [
+            "script1",
+            "script2",
+            "script3"
+          ]
+        },
+        {
+          "Frame": 10,
+          "Length": 10,
+          "scripts": [
+            "script1",
+            "script2",
+            "script3"
+          ]
+        }
+      ]
+    }
+  ],
+  "Properties": {
+    "Health": "20"
+  }
+}

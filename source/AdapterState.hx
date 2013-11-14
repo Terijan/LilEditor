@@ -43,8 +43,8 @@ class AdapterState extends FlxState
 		FlxG.camera.focusOn(cameraTarget.getMidpoint());
 		FlxG.camera.follow(cameraTarget, FlxCamera.STYLE_LOCKON, null);
 		lastMouse = new FlxPoint();
-		character = new Character();
-		add(character);
+		
+		
 		//FlxG.camera.focusOn(cameraTarget.getMidpoint());
 		cameraTarget.visible = false;
 		trace("test");
@@ -53,11 +53,18 @@ class AdapterState extends FlxState
 			ExternalInterface.addCallback("loadData", this.loadData);
 			ExternalInterface.call("Initialize");
 		}
+		else
+		{
+			character = new Character();
+			add(character);
+		}
+		FlxG.autoPause = false;
 		super.create();
 	}
 	
 	public function loadData(data:String):String {
-		trace("end file");
+		character = new Character("assets/test.png", 22, 18, data);		
+		add(character);
 		data = data.split("%").join("%25")
            .split("\\").join("%5c")
            .split("\"").join("%22")

@@ -35,7 +35,7 @@ class Character extends FlxObject
 	{
 		//test JSON data
 		var testData = Assets.getText("assets/testData.txt");
-		var charObj:CharData = TJSON.parse(testData);
+		var charObj:CharData = TJSON.parse((preData == null?testData:preData), "assets/testData.txt");
 		
 		
 		
@@ -74,7 +74,7 @@ class Character extends FlxObject
 				_keys = [];
 				for (k in a.Keys)
 				{
-					_keys.push(new Key(k.frame, k.length, k.scripts));
+					_keys.push(new Key(k.Frame, k.Length, k.Scripts));
 				}
 				//a contains: Name + keys
 				animations.push(new Animation(a.Name, _keys, 8));
@@ -184,7 +184,7 @@ class Character extends FlxObject
 	}
 	
 	typedef KeyData = {
-		frame: Int,
-		length: Int,
-		scripts: Array<String>
+		Frame: Int,
+		Length: Int,
+		Scripts: Array<String>
 	}
